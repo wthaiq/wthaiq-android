@@ -1,0 +1,58 @@
+config:
+  validation: true
+
+complexity:
+  LongMethod:
+    threshold: 80
+  LongParameterList:
+    functionThreshold: 8
+    constructorThreshold: 10
+  CyclomaticComplexMethod:
+    threshold: 25
+  TooManyFunctions:
+    thresholdInFiles: 40
+    thresholdInClasses: 40
+    thresholdInInterfaces: 15
+    thresholdInObjects: 25
+  LargeClass:
+    threshold: 900
+  NestedBlockDepth:
+    threshold: 5
+  ComplexCondition:
+    threshold: 5
+
+style:
+  MagicNumber:
+    active: false
+  ReturnCount:
+    max: 6
+  MaxLineLength:
+    maxLineLength: 130
+  WildcardImport:
+    active: true
+  ForbiddenComment:
+    active: true
+  UnusedPrivateMember:
+    active: true
+  LoopWithTooManyJumpStatements:
+    maxJumpCount: 3
+  UseCheckOrError:
+    active: true
+  DestructuringDeclarationWithTooManyEntries:
+    maxDestructuringEntries: 4
+
+naming:
+  FunctionNaming:
+    ignoreAnnotated: ['Composable', 'Test']
+  TopLevelPropertyNaming:
+    constantPattern: '[A-Z][_A-Z0-9]*'
+
+exceptions:
+  TooGenericExceptionCaught:
+    active: false
+  SwallowedException:
+    active: false
+
+potential-bugs:
+  LateinitUsage:
+    active: false
