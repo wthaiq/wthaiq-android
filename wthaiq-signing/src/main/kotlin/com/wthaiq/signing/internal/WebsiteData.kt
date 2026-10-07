@@ -31,8 +31,12 @@ internal class WebsiteDataSession(private val ephemeral: Boolean, private val fr
     private val usesProfile: Boolean =
         ephemeral && runCatching { WebViewFeature.isFeatureSupported(WebViewFeature.MULTI_PROFILE) }.getOrDefault(false)
 
-    /** Call once on the main thread before the first WebView is created. */
+    private var prepared = false
+
+    /** Call on the main thread before a WebView is created; only the first call of a session does anything. */
     fun prepare() {
+        if (prepared) return
+        prepared = true
         if (!usesProfile || !WebViewFeature.isFeatureSupported(WebViewFeature.MULTI_PROFILE)) return
         runCatching {
             if (freshStart) {
