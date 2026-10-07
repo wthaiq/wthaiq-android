@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <queries>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+        <intent>
+            <action android:name="android.support.customtabs.action.CustomTabsService" />
+        </intent>
+    </queries>
+
+    <application>
+        <activity
+            android:name="com.wthaiq.signing.WthaiqSigningActivity"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboard|keyboardHidden|navigation|density"
+            android:exported="false"
+            android:theme="@style/Wthaiq.Theme.Signing"
+            android:windowSoftInputMode="adjustResize" />
+
+        <provider
+            android:name="com.wthaiq.signing.WthaiqSigningFileProvider"
+            android:authorities="${applicationId}.wthaiq.signing.files"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/wthaiq_signing_file_paths" />
+        </provider>
+    </application>
+</manifest>

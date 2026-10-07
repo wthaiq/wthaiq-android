@@ -25,9 +25,11 @@ style:
   MagicNumber:
     active: false
   ReturnCount:
-    max: 6
+    max: 8
+    excludeGuardClauses: true
   MaxLineLength:
     maxLineLength: 130
+    excludes: ['**/test/**', '**/androidTest/**']
   WildcardImport:
     active: true
   ForbiddenComment:

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="wthaiq_signing_root" type="id" />
+    <item name="wthaiq_signing_header" type="id" />
+    <item name="wthaiq_signing_close" type="id" />
+    <item name="wthaiq_signing_status" type="id" />
+    <item name="wthaiq_signing_retry" type="id" />
+    <item name="wthaiq_signing_error_close" type="id" />
+    <item name="wthaiq_signing_web_view" type="id" />
+    <item name="wthaiq_signing_container" type="id" />
+</resources>
