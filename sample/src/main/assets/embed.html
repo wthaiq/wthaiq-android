@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Embedded signing (offline fixture)</title>
+<style>
+  body { font-family: sans-serif; margin: 0; padding: 24px; color: #0b0b0b; background: #fff; }
+  h1 { font-size: 20px; font-weight: 800; }
+  p { color: #5b5b66; line-height: 1.5; }
+  button { display: block; width: 100%; margin: 12px 0; padding: 14px; font-size: 16px; border-radius: 7px;
+           border: 1px solid #121ab0; background: #fff; color: #121ab0; }
+  button.primary { background: #121ab0; color: #fff; }
+</style>
+</head>
+<body>
+<h1>Offline fixture</h1>
+<p>This page imitates the embedded signing page, so the sample runs without a backend. It sends the same events
+  the real page sends.</p>
+<button class="primary" id="sign">Sign</button>
+<button id="decline">Decline</button>
+<button id="expire">Simulate an expired session</button>
+<button id="external">Open the terms (external link)</button>
+<script>
+  var ids = { signature_request: 'sr_demo', signer: 'sgr_demo' };
+  function post(name, extra) {
+    var message = { source: 'wthaiq', event: name, type: 'wthaiq:' + name };
+    for (var key in ids) { message[key] = ids[key]; }
+    for (var other in (extra || {})) { message[other] = extra[other]; }
+    parent.postMessage(message, '*');
+  }
+  post('viewed');
+  document.getElementById('sign').onclick = function () { post('signed'); };
+  document.getElementById('decline').onclick = function () { post('declined', { reason: 'signer_declined' }); };
+  document.getElementById('expire').onclick = function () {
+    parent.postMessage({ source: 'wthaiq', event: 'error', type: 'wthaiq:error', reason: 'session_expired' }, '*');
+  };
+  document.getElementById('external').onclick = function () { window.open('https://wthaiq.com/', '_blank'); };
+</script>
+</body>
+</html>
