@@ -29,8 +29,8 @@ import com.wthaiq.signing.internal.SigningEventBus
  * ```
  */
 public object WthaiqSigning {
-    /** The SDK version (Semantic Versioning). */
-    public const val VERSION: String = BuildConfig.SDK_VERSION
+    /** The SDK version (Semantic Versioning). Kept equal to `VERSION_NAME` in gradle.properties by a unit test. */
+    public const val VERSION: String = "1.0.0"
 
     /** The Wthaiq API version this release was built against. */
     public const val API_VERSION: String = "2026-07-01"

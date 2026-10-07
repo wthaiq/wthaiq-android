@@ -159,14 +159,19 @@ fun launchSigning(
 }
 
 /** Polls [condition] on the test thread until it is true or [timeoutMillis] elapse. */
-fun waitUntil(timeoutMillis: Long = 10_000, message: String = "condition", condition: () -> Boolean) {
+fun waitUntil(
+    timeoutMillis: Long = 10_000,
+    message: String = "condition",
+    detail: () -> String = { "" },
+    condition: () -> Boolean,
+) {
     val deadline = SystemClock.uptimeMillis() + timeoutMillis
     while (SystemClock.uptimeMillis() < deadline) {
         if (condition()) return
         InstrumentationRegistry.getInstrumentation().waitForIdleSync()
         Thread.sleep(50)
     }
-    throw AssertionError("Timed out waiting for $message")
+    throw AssertionError("Timed out waiting for $message ${detail()}".trim())
 }
 
 val Activity.signingFragment: WthaiqSigningFragment

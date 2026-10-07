@@ -1,0 +1,12 @@
+public final class com/wthaiq/signing/compose/WthaiqSigningLauncher {
+	public static final field $stable I
+	public final fun launch (Lcom/wthaiq/signing/SigningRequest;)V
+	public final fun launch (Ljava/lang/String;Lcom/wthaiq/signing/WthaiqSigningConfiguration;)V
+	public static synthetic fun launch$default (Lcom/wthaiq/signing/compose/WthaiqSigningLauncher;Ljava/lang/String;Lcom/wthaiq/signing/WthaiqSigningConfiguration;ILjava/lang/Object;)V
+}
+
+public final class com/wthaiq/signing/compose/WthaiqSigningLauncherKt {
+	public static final fun WthaiqSigningSheet (ZLjava/lang/String;Lcom/wthaiq/signing/WthaiqSigningConfiguration;Lcom/wthaiq/signing/SigningEventListener;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V
+	public static final fun rememberWthaiqSigningLauncher (Lcom/wthaiq/signing/SigningEventListener;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)Lcom/wthaiq/signing/compose/WthaiqSigningLauncher;
+}
+

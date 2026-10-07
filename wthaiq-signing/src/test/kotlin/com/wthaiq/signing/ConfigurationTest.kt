@@ -100,6 +100,7 @@ class ConfigurationTest {
     @Test
     fun versionConstants() {
         assertEquals("1.0.0", WthaiqSigning.VERSION)
+        assertEquals(System.getProperty("wthaiq.version"), WthaiqSigning.VERSION)
         assertEquals("2026-07-01", WthaiqSigning.API_VERSION)
         assertEquals(setOf("wthaiq.com", "www.wthaiq.com"), WthaiqSigning.PLATFORM_HOSTS)
     }

@@ -1,0 +1,796 @@
+public final class com/wthaiq/signing/InvalidSigningUrlException : java/lang/IllegalArgumentException {
+	public fun <init> (Lcom/wthaiq/signing/UrlValidationError;)V
+	public final fun getReason ()Lcom/wthaiq/signing/UrlValidationError;
+}
+
+public final class com/wthaiq/signing/ReturnUrlMatch {
+	public fun <init> (Ljava/lang/String;)V
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getSignatureRequestId ()Ljava/lang/String;
+	public final fun getSignerId ()Ljava/lang/String;
+	public final fun getStatus ()Lcom/wthaiq/signing/ReturnUrlMatch$Status;
+	public final fun getUrl ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract class com/wthaiq/signing/ReturnUrlMatch$Status {
+}
+
+public final class com/wthaiq/signing/ReturnUrlMatch$Status$Completed : com/wthaiq/signing/ReturnUrlMatch$Status {
+	public static final field INSTANCE Lcom/wthaiq/signing/ReturnUrlMatch$Status$Completed;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/ReturnUrlMatch$Status$Declined : com/wthaiq/signing/ReturnUrlMatch$Status {
+	public static final field INSTANCE Lcom/wthaiq/signing/ReturnUrlMatch$Status$Declined;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/ReturnUrlMatch$Status$Other : com/wthaiq/signing/ReturnUrlMatch$Status {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lcom/wthaiq/signing/ReturnUrlMatch$Status$Other;
+	public static synthetic fun copy$default (Lcom/wthaiq/signing/ReturnUrlMatch$Status$Other;Ljava/lang/String;ILjava/lang/Object;)Lcom/wthaiq/signing/ReturnUrlMatch$Status$Other;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getValue ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/ReturnUrlMatch$Status$Unspecified : com/wthaiq/signing/ReturnUrlMatch$Status {
+	public static final field INSTANCE Lcom/wthaiq/signing/ReturnUrlMatch$Status$Unspecified;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/ReturnUrlPattern {
+	public static final field Companion Lcom/wthaiq/signing/ReturnUrlPattern$Companion;
+	public fun <init> (Ljava/lang/String;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getHost ()Ljava/lang/String;
+	public final fun getPathPrefix ()Ljava/lang/String;
+	public final fun getScheme ()Ljava/lang/String;
+	public fun hashCode ()I
+	public final fun matches (Ljava/lang/String;)Z
+	public static final fun parse (Ljava/lang/String;)Lcom/wthaiq/signing/ReturnUrlPattern;
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/ReturnUrlPattern$Companion {
+	public final fun parse (Ljava/lang/String;)Lcom/wthaiq/signing/ReturnUrlPattern;
+}
+
+public final class com/wthaiq/signing/SigningColor {
+	public static final field BRAND Lcom/wthaiq/signing/SigningColor;
+	public static final field Companion Lcom/wthaiq/signing/SigningColor$Companion;
+	public fun <init> (I)V
+	public fun <init> (II)V
+	public final fun argb (Z)I
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getDark ()I
+	public final fun getLight ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/SigningColor$Companion {
+}
+
+public abstract class com/wthaiq/signing/SigningEvent {
+}
+
+public final class com/wthaiq/signing/SigningEvent$ExternalUrlOpened : com/wthaiq/signing/SigningEvent {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lcom/wthaiq/signing/SigningEvent$ExternalUrlOpened;
+	public static synthetic fun copy$default (Lcom/wthaiq/signing/SigningEvent$ExternalUrlOpened;Ljava/lang/String;ILjava/lang/Object;)Lcom/wthaiq/signing/SigningEvent$ExternalUrlOpened;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getUrl ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/SigningEvent$IdentityVerificationStarted : com/wthaiq/signing/SigningEvent {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lcom/wthaiq/signing/SigningEvent$IdentityVerificationStarted;
+	public static synthetic fun copy$default (Lcom/wthaiq/signing/SigningEvent$IdentityVerificationStarted;Ljava/lang/String;ILjava/lang/Object;)Lcom/wthaiq/signing/SigningEvent$IdentityVerificationStarted;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getHost ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/SigningEvent$LoadFailed : com/wthaiq/signing/SigningEvent {
+	public fun <init> (Lcom/wthaiq/signing/WthaiqSigningError;)V
+	public final fun component1 ()Lcom/wthaiq/signing/WthaiqSigningError;
+	public final fun copy (Lcom/wthaiq/signing/WthaiqSigningError;)Lcom/wthaiq/signing/SigningEvent$LoadFailed;
+	public static synthetic fun copy$default (Lcom/wthaiq/signing/SigningEvent$LoadFailed;Lcom/wthaiq/signing/WthaiqSigningError;ILjava/lang/Object;)Lcom/wthaiq/signing/SigningEvent$LoadFailed;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getError ()Lcom/wthaiq/signing/WthaiqSigningError;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/SigningEvent$NavigationBlocked : com/wthaiq/signing/SigningEvent {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lcom/wthaiq/signing/SigningEvent$NavigationBlocked;
+	public static synthetic fun copy$default (Lcom/wthaiq/signing/SigningEvent$NavigationBlocked;Ljava/lang/String;ILjava/lang/Object;)Lcom/wthaiq/signing/SigningEvent$NavigationBlocked;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getUrl ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/SigningEvent$PageLoaded : com/wthaiq/signing/SigningEvent {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lcom/wthaiq/signing/SigningEvent$PageLoaded;
+	public static synthetic fun copy$default (Lcom/wthaiq/signing/SigningEvent$PageLoaded;Ljava/lang/String;ILjava/lang/Object;)Lcom/wthaiq/signing/SigningEvent$PageLoaded;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getUrl ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/SigningEvent$PageMessage : com/wthaiq/signing/SigningEvent {
+	public fun <init> (Ljava/lang/String;Ljava/util/Map;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/util/Map;
+	public final fun copy (Ljava/lang/String;Ljava/util/Map;)Lcom/wthaiq/signing/SigningEvent$PageMessage;
+	public static synthetic fun copy$default (Lcom/wthaiq/signing/SigningEvent$PageMessage;Ljava/lang/String;Ljava/util/Map;ILjava/lang/Object;)Lcom/wthaiq/signing/SigningEvent$PageMessage;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getFields ()Ljava/util/Map;
+	public final fun getName ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/SigningEvent$PageStateChanged : com/wthaiq/signing/SigningEvent {
+	public fun <init> (Lcom/wthaiq/signing/SigningPageState;)V
+	public final fun component1 ()Lcom/wthaiq/signing/SigningPageState;
+	public final fun copy (Lcom/wthaiq/signing/SigningPageState;)Lcom/wthaiq/signing/SigningEvent$PageStateChanged;
+	public static synthetic fun copy$default (Lcom/wthaiq/signing/SigningEvent$PageStateChanged;Lcom/wthaiq/signing/SigningPageState;ILjava/lang/Object;)Lcom/wthaiq/signing/SigningEvent$PageStateChanged;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getState ()Lcom/wthaiq/signing/SigningPageState;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/SigningEvent$Viewed : com/wthaiq/signing/SigningEvent {
+	public fun <init> (Lcom/wthaiq/signing/SigningReference;)V
+	public final fun component1 ()Lcom/wthaiq/signing/SigningReference;
+	public final fun copy (Lcom/wthaiq/signing/SigningReference;)Lcom/wthaiq/signing/SigningEvent$Viewed;
+	public static synthetic fun copy$default (Lcom/wthaiq/signing/SigningEvent$Viewed;Lcom/wthaiq/signing/SigningReference;ILjava/lang/Object;)Lcom/wthaiq/signing/SigningEvent$Viewed;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getReference ()Lcom/wthaiq/signing/SigningReference;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract interface class com/wthaiq/signing/SigningEventListener {
+	public abstract fun onSigningEvent (Lcom/wthaiq/signing/SigningEvent;)V
+}
+
+public final class com/wthaiq/signing/SigningLink {
+	public static final field Companion Lcom/wthaiq/signing/SigningLink$Companion;
+	public synthetic fun <init> (Ljava/lang/String;Lcom/wthaiq/signing/SigningLink$Kind;Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public static final fun check (Ljava/lang/String;)Lcom/wthaiq/signing/SigningLink$Check;
+	public static final fun check (Ljava/lang/String;Lcom/wthaiq/signing/WthaiqSigningConfiguration;)Lcom/wthaiq/signing/SigningLink$Check;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getHost ()Ljava/lang/String;
+	public final fun getKind ()Lcom/wthaiq/signing/SigningLink$Kind;
+	public final fun getUrl ()Ljava/lang/String;
+	public fun hashCode ()I
+	public static final fun isValid (Ljava/lang/String;)Z
+	public static final fun isValid (Ljava/lang/String;Lcom/wthaiq/signing/WthaiqSigningConfiguration;)Z
+	public fun toString ()Ljava/lang/String;
+	public final fun urlFor (Lcom/wthaiq/signing/WthaiqSigningConfiguration$Language;)Ljava/lang/String;
+	public static final fun validate (Ljava/lang/String;)Lcom/wthaiq/signing/SigningLink;
+	public static final fun validate (Ljava/lang/String;Lcom/wthaiq/signing/WthaiqSigningConfiguration;)Lcom/wthaiq/signing/SigningLink;
+}
+
+public abstract class com/wthaiq/signing/SigningLink$Check {
+}
+
+public final class com/wthaiq/signing/SigningLink$Check$Invalid : com/wthaiq/signing/SigningLink$Check {
+	public fun <init> (Lcom/wthaiq/signing/UrlValidationError;)V
+	public final fun component1 ()Lcom/wthaiq/signing/UrlValidationError;
+	public final fun copy (Lcom/wthaiq/signing/UrlValidationError;)Lcom/wthaiq/signing/SigningLink$Check$Invalid;
+	public static synthetic fun copy$default (Lcom/wthaiq/signing/SigningLink$Check$Invalid;Lcom/wthaiq/signing/UrlValidationError;ILjava/lang/Object;)Lcom/wthaiq/signing/SigningLink$Check$Invalid;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getReason ()Lcom/wthaiq/signing/UrlValidationError;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/SigningLink$Check$Valid : com/wthaiq/signing/SigningLink$Check {
+	public fun <init> (Lcom/wthaiq/signing/SigningLink;)V
+	public final fun component1 ()Lcom/wthaiq/signing/SigningLink;
+	public final fun copy (Lcom/wthaiq/signing/SigningLink;)Lcom/wthaiq/signing/SigningLink$Check$Valid;
+	public static synthetic fun copy$default (Lcom/wthaiq/signing/SigningLink$Check$Valid;Lcom/wthaiq/signing/SigningLink;ILjava/lang/Object;)Lcom/wthaiq/signing/SigningLink$Check$Valid;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getLink ()Lcom/wthaiq/signing/SigningLink;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/SigningLink$Companion {
+	public final fun check (Ljava/lang/String;)Lcom/wthaiq/signing/SigningLink$Check;
+	public final fun check (Ljava/lang/String;Lcom/wthaiq/signing/WthaiqSigningConfiguration;)Lcom/wthaiq/signing/SigningLink$Check;
+	public static synthetic fun check$default (Lcom/wthaiq/signing/SigningLink$Companion;Ljava/lang/String;Lcom/wthaiq/signing/WthaiqSigningConfiguration;ILjava/lang/Object;)Lcom/wthaiq/signing/SigningLink$Check;
+	public final fun isValid (Ljava/lang/String;)Z
+	public final fun isValid (Ljava/lang/String;Lcom/wthaiq/signing/WthaiqSigningConfiguration;)Z
+	public static synthetic fun isValid$default (Lcom/wthaiq/signing/SigningLink$Companion;Ljava/lang/String;Lcom/wthaiq/signing/WthaiqSigningConfiguration;ILjava/lang/Object;)Z
+	public final fun validate (Ljava/lang/String;)Lcom/wthaiq/signing/SigningLink;
+	public final fun validate (Ljava/lang/String;Lcom/wthaiq/signing/WthaiqSigningConfiguration;)Lcom/wthaiq/signing/SigningLink;
+	public static synthetic fun validate$default (Lcom/wthaiq/signing/SigningLink$Companion;Ljava/lang/String;Lcom/wthaiq/signing/WthaiqSigningConfiguration;ILjava/lang/Object;)Lcom/wthaiq/signing/SigningLink;
+}
+
+public final class com/wthaiq/signing/SigningLink$Kind : java/lang/Enum {
+	public static final field EMBEDDED_SESSION Lcom/wthaiq/signing/SigningLink$Kind;
+	public static final field OTHER Lcom/wthaiq/signing/SigningLink$Kind;
+	public static final field SIGNING_PAGE Lcom/wthaiq/signing/SigningLink$Kind;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public final fun getValue ()Ljava/lang/String;
+	public static fun valueOf (Ljava/lang/String;)Lcom/wthaiq/signing/SigningLink$Kind;
+	public static fun values ()[Lcom/wthaiq/signing/SigningLink$Kind;
+}
+
+public final class com/wthaiq/signing/SigningOutcome {
+	public fun <init> (Lcom/wthaiq/signing/SigningOutcome$Detection;)V
+	public fun <init> (Lcom/wthaiq/signing/SigningReference;Lcom/wthaiq/signing/SigningOutcome$Detection;)V
+	public fun <init> (Lcom/wthaiq/signing/SigningReference;Lcom/wthaiq/signing/SigningOutcome$Detection;Ljava/lang/String;)V
+	public fun <init> (Lcom/wthaiq/signing/SigningReference;Lcom/wthaiq/signing/SigningOutcome$Detection;Ljava/lang/String;Z)V
+	public fun <init> (Lcom/wthaiq/signing/SigningReference;Lcom/wthaiq/signing/SigningOutcome$Detection;Ljava/lang/String;ZLjava/lang/String;)V
+	public synthetic fun <init> (Lcom/wthaiq/signing/SigningReference;Lcom/wthaiq/signing/SigningOutcome$Detection;Ljava/lang/String;ZLjava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Lcom/wthaiq/signing/SigningReference;
+	public final fun component2 ()Lcom/wthaiq/signing/SigningOutcome$Detection;
+	public final fun component3 ()Ljava/lang/String;
+	public final fun component4 ()Z
+	public final fun component5 ()Ljava/lang/String;
+	public final fun copy (Lcom/wthaiq/signing/SigningReference;Lcom/wthaiq/signing/SigningOutcome$Detection;Ljava/lang/String;ZLjava/lang/String;)Lcom/wthaiq/signing/SigningOutcome;
+	public static synthetic fun copy$default (Lcom/wthaiq/signing/SigningOutcome;Lcom/wthaiq/signing/SigningReference;Lcom/wthaiq/signing/SigningOutcome$Detection;Ljava/lang/String;ZLjava/lang/String;ILjava/lang/Object;)Lcom/wthaiq/signing/SigningOutcome;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getDetection ()Lcom/wthaiq/signing/SigningOutcome$Detection;
+	public final fun getReason ()Ljava/lang/String;
+	public final fun getReference ()Lcom/wthaiq/signing/SigningReference;
+	public final fun getReturnUrl ()Ljava/lang/String;
+	public final fun getWasAlreadyFinal ()Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/SigningOutcome$Detection : java/lang/Enum {
+	public static final field PAGE_CONTENT Lcom/wthaiq/signing/SigningOutcome$Detection;
+	public static final field PAGE_EVENT Lcom/wthaiq/signing/SigningOutcome$Detection;
+	public static final field RETURN_URL Lcom/wthaiq/signing/SigningOutcome$Detection;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public final fun getValue ()Ljava/lang/String;
+	public static fun valueOf (Ljava/lang/String;)Lcom/wthaiq/signing/SigningOutcome$Detection;
+	public static fun values ()[Lcom/wthaiq/signing/SigningOutcome$Detection;
+}
+
+public final class com/wthaiq/signing/SigningPageState : java/lang/Enum {
+	public static final field ACCESS_CODE_REQUIRED Lcom/wthaiq/signing/SigningPageState;
+	public static final field ALREADY_DECLINED Lcom/wthaiq/signing/SigningPageState;
+	public static final field ALREADY_SIGNED Lcom/wthaiq/signing/SigningPageState;
+	public static final field CANCELED Lcom/wthaiq/signing/SigningPageState;
+	public static final field Companion Lcom/wthaiq/signing/SigningPageState$Companion;
+	public static final field EXPIRED Lcom/wthaiq/signing/SigningPageState;
+	public static final field IDENTITY_UNAVAILABLE Lcom/wthaiq/signing/SigningPageState;
+	public static final field MISSING_TOKEN Lcom/wthaiq/signing/SigningPageState;
+	public static final field NOT_FOUND Lcom/wthaiq/signing/SigningPageState;
+	public static final field NOT_YOUR_TURN Lcom/wthaiq/signing/SigningPageState;
+	public static final fun fromValue (Ljava/lang/String;)Lcom/wthaiq/signing/SigningPageState;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public final fun getValue ()Ljava/lang/String;
+	public final fun isFinal ()Z
+	public static fun valueOf (Ljava/lang/String;)Lcom/wthaiq/signing/SigningPageState;
+	public static fun values ()[Lcom/wthaiq/signing/SigningPageState;
+}
+
+public final class com/wthaiq/signing/SigningPageState$Companion {
+	public final fun fromValue (Ljava/lang/String;)Lcom/wthaiq/signing/SigningPageState;
+}
+
+public final class com/wthaiq/signing/SigningReference {
+	public static final field Companion Lcom/wthaiq/signing/SigningReference$Companion;
+	public static final field UNKNOWN Lcom/wthaiq/signing/SigningReference;
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/String;)V
+	public fun <init> (Ljava/lang/String;Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;Ljava/lang/String;)Lcom/wthaiq/signing/SigningReference;
+	public static synthetic fun copy$default (Lcom/wthaiq/signing/SigningReference;Ljava/lang/String;Ljava/lang/String;ILjava/lang/Object;)Lcom/wthaiq/signing/SigningReference;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getSignatureRequestId ()Ljava/lang/String;
+	public final fun getSignerId ()Ljava/lang/String;
+	public fun hashCode ()I
+	public final fun isEmpty ()Z
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/SigningReference$Companion {
+}
+
+public final class com/wthaiq/signing/SigningRequest {
+	public fun <init> (Ljava/lang/String;)V
+	public fun <init> (Ljava/lang/String;Lcom/wthaiq/signing/WthaiqSigningConfiguration;)V
+	public synthetic fun <init> (Ljava/lang/String;Lcom/wthaiq/signing/WthaiqSigningConfiguration;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getConfiguration ()Lcom/wthaiq/signing/WthaiqSigningConfiguration;
+	public final fun getUrl ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract class com/wthaiq/signing/SigningResult {
+	public static final field Companion Lcom/wthaiq/signing/SigningResult$Companion;
+	public static final fun fromReturnUrl (Ljava/lang/String;)Lcom/wthaiq/signing/SigningResult;
+	public fun getOutcome ()Lcom/wthaiq/signing/SigningOutcome;
+	public final fun isSigned ()Z
+}
+
+public final class com/wthaiq/signing/SigningResult$Canceled : com/wthaiq/signing/SigningResult {
+	public static final field INSTANCE Lcom/wthaiq/signing/SigningResult$Canceled;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/SigningResult$Companion {
+	public final fun fromReturnUrl (Ljava/lang/String;)Lcom/wthaiq/signing/SigningResult;
+}
+
+public final class com/wthaiq/signing/SigningResult$Declined : com/wthaiq/signing/SigningResult {
+	public fun <init> (Lcom/wthaiq/signing/SigningOutcome;)V
+	public final fun component1 ()Lcom/wthaiq/signing/SigningOutcome;
+	public final fun copy (Lcom/wthaiq/signing/SigningOutcome;)Lcom/wthaiq/signing/SigningResult$Declined;
+	public static synthetic fun copy$default (Lcom/wthaiq/signing/SigningResult$Declined;Lcom/wthaiq/signing/SigningOutcome;ILjava/lang/Object;)Lcom/wthaiq/signing/SigningResult$Declined;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getOutcome ()Lcom/wthaiq/signing/SigningOutcome;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/SigningResult$Expired : com/wthaiq/signing/SigningResult {
+	public static final field INSTANCE Lcom/wthaiq/signing/SigningResult$Expired;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/SigningResult$Failed : com/wthaiq/signing/SigningResult {
+	public fun <init> (Lcom/wthaiq/signing/WthaiqSigningError;)V
+	public final fun component1 ()Lcom/wthaiq/signing/WthaiqSigningError;
+	public final fun copy (Lcom/wthaiq/signing/WthaiqSigningError;)Lcom/wthaiq/signing/SigningResult$Failed;
+	public static synthetic fun copy$default (Lcom/wthaiq/signing/SigningResult$Failed;Lcom/wthaiq/signing/WthaiqSigningError;ILjava/lang/Object;)Lcom/wthaiq/signing/SigningResult$Failed;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getError ()Lcom/wthaiq/signing/WthaiqSigningError;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/SigningResult$Signed : com/wthaiq/signing/SigningResult {
+	public fun <init> (Lcom/wthaiq/signing/SigningOutcome;)V
+	public final fun component1 ()Lcom/wthaiq/signing/SigningOutcome;
+	public final fun copy (Lcom/wthaiq/signing/SigningOutcome;)Lcom/wthaiq/signing/SigningResult$Signed;
+	public static synthetic fun copy$default (Lcom/wthaiq/signing/SigningResult$Signed;Lcom/wthaiq/signing/SigningOutcome;ILjava/lang/Object;)Lcom/wthaiq/signing/SigningResult$Signed;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getOutcome ()Lcom/wthaiq/signing/SigningOutcome;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public abstract class com/wthaiq/signing/UrlValidationError {
+	public abstract fun getDescription ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/UrlValidationError$ContainsCredentials : com/wthaiq/signing/UrlValidationError {
+	public static final field INSTANCE Lcom/wthaiq/signing/UrlValidationError$ContainsCredentials;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/UrlValidationError$HostNotAllowed : com/wthaiq/signing/UrlValidationError {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lcom/wthaiq/signing/UrlValidationError$HostNotAllowed;
+	public static synthetic fun copy$default (Lcom/wthaiq/signing/UrlValidationError$HostNotAllowed;Ljava/lang/String;ILjava/lang/Object;)Lcom/wthaiq/signing/UrlValidationError$HostNotAllowed;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public final fun getHost ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/UrlValidationError$Malformed : com/wthaiq/signing/UrlValidationError {
+	public static final field INSTANCE Lcom/wthaiq/signing/UrlValidationError$Malformed;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/UrlValidationError$MissingHost : com/wthaiq/signing/UrlValidationError {
+	public static final field INSTANCE Lcom/wthaiq/signing/UrlValidationError$MissingHost;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/UrlValidationError$MissingToken : com/wthaiq/signing/UrlValidationError {
+	public static final field INSTANCE Lcom/wthaiq/signing/UrlValidationError$MissingToken;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/UrlValidationError$MissingUrl : com/wthaiq/signing/UrlValidationError {
+	public static final field INSTANCE Lcom/wthaiq/signing/UrlValidationError$MissingUrl;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/UrlValidationError$UnsupportedScheme : com/wthaiq/signing/UrlValidationError {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lcom/wthaiq/signing/UrlValidationError$UnsupportedScheme;
+	public static synthetic fun copy$default (Lcom/wthaiq/signing/UrlValidationError$UnsupportedScheme;Ljava/lang/String;ILjava/lang/Object;)Lcom/wthaiq/signing/UrlValidationError$UnsupportedScheme;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public final fun getScheme ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/WthaiqSigning {
+	public static final field API_VERSION Ljava/lang/String;
+	public static final field INSTANCE Lcom/wthaiq/signing/WthaiqSigning;
+	public static final field PLATFORM_HOSTS Ljava/util/Set;
+	public static final field VERSION Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/WthaiqSigning$Contract : androidx/activity/result/contract/ActivityResultContract {
+	public fun <init> ()V
+	public fun <init> (Lcom/wthaiq/signing/SigningEventListener;)V
+	public synthetic fun <init> (Lcom/wthaiq/signing/SigningEventListener;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun createIntent (Landroid/content/Context;Lcom/wthaiq/signing/SigningRequest;)Landroid/content/Intent;
+	public synthetic fun createIntent (Landroid/content/Context;Ljava/lang/Object;)Landroid/content/Intent;
+	public fun parseResult (ILandroid/content/Intent;)Lcom/wthaiq/signing/SigningResult;
+	public synthetic fun parseResult (ILandroid/content/Intent;)Ljava/lang/Object;
+}
+
+public final class com/wthaiq/signing/WthaiqSigningActivity : androidx/fragment/app/FragmentActivity, com/wthaiq/signing/WthaiqSigningFragment$Listener {
+	public static final field Companion Lcom/wthaiq/signing/WthaiqSigningActivity$Companion;
+	public fun <init> ()V
+	public static final fun createIntent (Landroid/content/Context;Lcom/wthaiq/signing/SigningRequest;)Landroid/content/Intent;
+	public fun onSigningDismissRequested (Lcom/wthaiq/signing/WthaiqSigningFragment;)V
+	public fun onSigningEvent (Lcom/wthaiq/signing/WthaiqSigningFragment;Lcom/wthaiq/signing/SigningEvent;)V
+	public fun onSigningResult (Lcom/wthaiq/signing/WthaiqSigningFragment;Lcom/wthaiq/signing/SigningResult;)V
+}
+
+public final class com/wthaiq/signing/WthaiqSigningActivity$Companion {
+	public final fun createIntent (Landroid/content/Context;Lcom/wthaiq/signing/SigningRequest;)Landroid/content/Intent;
+}
+
+public final class com/wthaiq/signing/WthaiqSigningConfiguration {
+	public static final field Companion Lcom/wthaiq/signing/WthaiqSigningConfiguration$Companion;
+	public static final field DEFAULT Lcom/wthaiq/signing/WthaiqSigningConfiguration;
+	public static final field DEFAULT_DISMISSAL_DELAY_MILLIS J
+	public static final field DEFAULT_TIMEOUT_MILLIS J
+	public static final field MAX_TIMEOUT_MILLIS J
+	public static final field MIN_TIMEOUT_MILLIS J
+	public synthetic fun <init> (Lcom/wthaiq/signing/WthaiqSigningConfiguration$Builder;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getAllowedHosts ()Ljava/util/Set;
+	public final fun getAllowsInsecureLocalHosts ()Z
+	public final fun getAppearance ()Lcom/wthaiq/signing/WthaiqSigningConfiguration$Appearance;
+	public final fun getDetectsPlatformReturnNavigation ()Z
+	public final fun getDismissal ()Lcom/wthaiq/signing/WthaiqSigningConfiguration$Dismissal;
+	public final fun getIdentityVerification ()Lcom/wthaiq/signing/WthaiqSigningConfiguration$IdentityVerificationPolicy;
+	public final fun getIdentityVerificationHosts ()Ljava/util/Set;
+	public final fun getLanguage ()Lcom/wthaiq/signing/WthaiqSigningConfiguration$Language;
+	public final fun getReturnUrls ()Ljava/util/List;
+	public final fun getShowsCloseButton ()Z
+	public final fun getTimeoutMillis ()J
+	public final fun getUsesEphemeralWebsiteData ()Z
+	public fun hashCode ()I
+	public final fun isWebContentsDebuggingEnabled ()Z
+	public final fun newBuilder ()Lcom/wthaiq/signing/WthaiqSigningConfiguration$Builder;
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/WthaiqSigningConfiguration$Appearance {
+	public static final field Companion Lcom/wthaiq/signing/WthaiqSigningConfiguration$Appearance$Companion;
+	public static final field DEFAULT Lcom/wthaiq/signing/WthaiqSigningConfiguration$Appearance;
+	public synthetic fun <init> (Lcom/wthaiq/signing/WthaiqSigningConfiguration$Appearance$Builder;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getConfirmsBeforeClosing ()Z
+	public final fun getInterfaceStyle ()Lcom/wthaiq/signing/WthaiqSigningConfiguration$InterfaceStyle;
+	public final fun getShowsHeader ()Z
+	public final fun getShowsProgressBar ()Z
+	public final fun getTintColor ()Lcom/wthaiq/signing/SigningColor;
+	public final fun getTitle ()Ljava/lang/String;
+	public fun hashCode ()I
+	public final fun newBuilder ()Lcom/wthaiq/signing/WthaiqSigningConfiguration$Appearance$Builder;
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/WthaiqSigningConfiguration$Appearance$Builder {
+	public fun <init> ()V
+	public final fun build ()Lcom/wthaiq/signing/WthaiqSigningConfiguration$Appearance;
+	public final fun getConfirmsBeforeClosing ()Z
+	public final fun getInterfaceStyle ()Lcom/wthaiq/signing/WthaiqSigningConfiguration$InterfaceStyle;
+	public final fun getShowsHeader ()Z
+	public final fun getShowsProgressBar ()Z
+	public final fun getTintColor ()Lcom/wthaiq/signing/SigningColor;
+	public final fun getTitle ()Ljava/lang/String;
+	public final fun setConfirmsBeforeClosing (Z)V
+	public final fun setInterfaceStyle (Lcom/wthaiq/signing/WthaiqSigningConfiguration$InterfaceStyle;)V
+	public final fun setShowsHeader (Z)V
+	public final fun setShowsProgressBar (Z)V
+	public final fun setTintColor (Lcom/wthaiq/signing/SigningColor;)V
+	public final fun setTitle (Ljava/lang/String;)V
+}
+
+public final class com/wthaiq/signing/WthaiqSigningConfiguration$Appearance$Companion {
+}
+
+public final class com/wthaiq/signing/WthaiqSigningConfiguration$Builder {
+	public fun <init> ()V
+	public final fun addAllowedHost (Ljava/lang/String;)Lcom/wthaiq/signing/WthaiqSigningConfiguration$Builder;
+	public final fun addIdentityVerificationHost (Ljava/lang/String;)Lcom/wthaiq/signing/WthaiqSigningConfiguration$Builder;
+	public final fun addReturnUrl (Lcom/wthaiq/signing/ReturnUrlPattern;)Z
+	public final fun addReturnUrl (Ljava/lang/String;)Z
+	public final fun appearance (Lkotlin/jvm/functions/Function1;)Lcom/wthaiq/signing/WthaiqSigningConfiguration$Builder;
+	public final fun build ()Lcom/wthaiq/signing/WthaiqSigningConfiguration;
+	public final fun getAllowedHosts ()Ljava/util/Set;
+	public final fun getAllowsInsecureLocalHosts ()Z
+	public final fun getAppearance ()Lcom/wthaiq/signing/WthaiqSigningConfiguration$Appearance;
+	public final fun getDetectsPlatformReturnNavigation ()Z
+	public final fun getDismissal ()Lcom/wthaiq/signing/WthaiqSigningConfiguration$Dismissal;
+	public final fun getIdentityVerification ()Lcom/wthaiq/signing/WthaiqSigningConfiguration$IdentityVerificationPolicy;
+	public final fun getIdentityVerificationHosts ()Ljava/util/Set;
+	public final fun getLanguage ()Lcom/wthaiq/signing/WthaiqSigningConfiguration$Language;
+	public final fun getReturnUrls ()Ljava/util/List;
+	public final fun getShowsCloseButton ()Z
+	public final fun getTimeoutMillis ()J
+	public final fun getUsesEphemeralWebsiteData ()Z
+	public final fun isWebContentsDebuggingEnabled ()Z
+	public final fun setAllowedHosts (Ljava/util/Set;)V
+	public final fun setAllowsInsecureLocalHosts (Z)V
+	public final fun setAppearance (Lcom/wthaiq/signing/WthaiqSigningConfiguration$Appearance;)V
+	public final fun setDetectsPlatformReturnNavigation (Z)V
+	public final fun setDismissal (Lcom/wthaiq/signing/WthaiqSigningConfiguration$Dismissal;)V
+	public final fun setIdentityVerification (Lcom/wthaiq/signing/WthaiqSigningConfiguration$IdentityVerificationPolicy;)V
+	public final fun setIdentityVerificationHosts (Ljava/util/Set;)V
+	public final fun setLanguage (Lcom/wthaiq/signing/WthaiqSigningConfiguration$Language;)V
+	public final fun setReturnUrls (Ljava/util/List;)V
+	public final fun setShowsCloseButton (Z)V
+	public final fun setTimeoutMillis (J)V
+	public final fun setUsesEphemeralWebsiteData (Z)V
+	public final fun setWebContentsDebuggingEnabled (Z)V
+}
+
+public final class com/wthaiq/signing/WthaiqSigningConfiguration$Companion {
+}
+
+public abstract class com/wthaiq/signing/WthaiqSigningConfiguration$Dismissal {
+}
+
+public final class com/wthaiq/signing/WthaiqSigningConfiguration$Dismissal$Automatic : com/wthaiq/signing/WthaiqSigningConfiguration$Dismissal {
+	public fun <init> ()V
+	public fun <init> (J)V
+	public synthetic fun <init> (JILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getDelayMillis ()J
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/WthaiqSigningConfiguration$Dismissal$Manual : com/wthaiq/signing/WthaiqSigningConfiguration$Dismissal {
+	public static final field INSTANCE Lcom/wthaiq/signing/WthaiqSigningConfiguration$Dismissal$Manual;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/WthaiqSigningConfiguration$IdentityVerificationPolicy : java/lang/Enum {
+	public static final field FOLLOW_PLATFORM Lcom/wthaiq/signing/WthaiqSigningConfiguration$IdentityVerificationPolicy;
+	public static final field LISTED_HOSTS_ONLY Lcom/wthaiq/signing/WthaiqSigningConfiguration$IdentityVerificationPolicy;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lcom/wthaiq/signing/WthaiqSigningConfiguration$IdentityVerificationPolicy;
+	public static fun values ()[Lcom/wthaiq/signing/WthaiqSigningConfiguration$IdentityVerificationPolicy;
+}
+
+public final class com/wthaiq/signing/WthaiqSigningConfiguration$InterfaceStyle : java/lang/Enum {
+	public static final field DARK Lcom/wthaiq/signing/WthaiqSigningConfiguration$InterfaceStyle;
+	public static final field LIGHT Lcom/wthaiq/signing/WthaiqSigningConfiguration$InterfaceStyle;
+	public static final field SYSTEM Lcom/wthaiq/signing/WthaiqSigningConfiguration$InterfaceStyle;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lcom/wthaiq/signing/WthaiqSigningConfiguration$InterfaceStyle;
+	public static fun values ()[Lcom/wthaiq/signing/WthaiqSigningConfiguration$InterfaceStyle;
+}
+
+public final class com/wthaiq/signing/WthaiqSigningConfiguration$Language : java/lang/Enum {
+	public static final field ARABIC Lcom/wthaiq/signing/WthaiqSigningConfiguration$Language;
+	public static final field AUTOMATIC Lcom/wthaiq/signing/WthaiqSigningConfiguration$Language;
+	public static final field ENGLISH Lcom/wthaiq/signing/WthaiqSigningConfiguration$Language;
+	public final fun getCode ()Ljava/lang/String;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public static fun valueOf (Ljava/lang/String;)Lcom/wthaiq/signing/WthaiqSigningConfiguration$Language;
+	public static fun values ()[Lcom/wthaiq/signing/WthaiqSigningConfiguration$Language;
+}
+
+public final class com/wthaiq/signing/WthaiqSigningConfigurationKt {
+	public static final fun WthaiqSigningConfiguration (Lkotlin/jvm/functions/Function1;)Lcom/wthaiq/signing/WthaiqSigningConfiguration;
+}
+
+public abstract class com/wthaiq/signing/WthaiqSigningError {
+	public static final field ERROR_HOST_LOOKUP I
+	public abstract fun getDescription ()Ljava/lang/String;
+	public final fun isOffline ()Z
+	public final fun isRetryable ()Z
+}
+
+public final class com/wthaiq/signing/WthaiqSigningError$HttpStatus : com/wthaiq/signing/WthaiqSigningError {
+	public fun <init> (I)V
+	public final fun component1 ()I
+	public final fun copy (I)Lcom/wthaiq/signing/WthaiqSigningError$HttpStatus;
+	public static synthetic fun copy$default (Lcom/wthaiq/signing/WthaiqSigningError$HttpStatus;IILjava/lang/Object;)Lcom/wthaiq/signing/WthaiqSigningError$HttpStatus;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public final fun getStatus ()I
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/WthaiqSigningError$InvalidUrl : com/wthaiq/signing/WthaiqSigningError {
+	public fun <init> (Lcom/wthaiq/signing/UrlValidationError;)V
+	public final fun component1 ()Lcom/wthaiq/signing/UrlValidationError;
+	public final fun copy (Lcom/wthaiq/signing/UrlValidationError;)Lcom/wthaiq/signing/WthaiqSigningError$InvalidUrl;
+	public static synthetic fun copy$default (Lcom/wthaiq/signing/WthaiqSigningError$InvalidUrl;Lcom/wthaiq/signing/UrlValidationError;ILjava/lang/Object;)Lcom/wthaiq/signing/WthaiqSigningError$InvalidUrl;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public final fun getReason ()Lcom/wthaiq/signing/UrlValidationError;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/WthaiqSigningError$LinkUnavailable : com/wthaiq/signing/WthaiqSigningError {
+	public fun <init> (Lcom/wthaiq/signing/SigningPageState;)V
+	public final fun component1 ()Lcom/wthaiq/signing/SigningPageState;
+	public final fun copy (Lcom/wthaiq/signing/SigningPageState;)Lcom/wthaiq/signing/WthaiqSigningError$LinkUnavailable;
+	public static synthetic fun copy$default (Lcom/wthaiq/signing/WthaiqSigningError$LinkUnavailable;Lcom/wthaiq/signing/SigningPageState;ILjava/lang/Object;)Lcom/wthaiq/signing/WthaiqSigningError$LinkUnavailable;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public final fun getState ()Lcom/wthaiq/signing/SigningPageState;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/WthaiqSigningError$Network : com/wthaiq/signing/WthaiqSigningError {
+	public fun <init> (ILjava/lang/String;)V
+	public final fun component1 ()I
+	public final fun component2 ()Ljava/lang/String;
+	public final fun copy (ILjava/lang/String;)Lcom/wthaiq/signing/WthaiqSigningError$Network;
+	public static synthetic fun copy$default (Lcom/wthaiq/signing/WthaiqSigningError$Network;ILjava/lang/String;ILjava/lang/Object;)Lcom/wthaiq/signing/WthaiqSigningError$Network;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getCode ()I
+	public fun getDescription ()Ljava/lang/String;
+	public final fun getMessage ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/WthaiqSigningError$PageError : com/wthaiq/signing/WthaiqSigningError {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lcom/wthaiq/signing/WthaiqSigningError$PageError;
+	public static synthetic fun copy$default (Lcom/wthaiq/signing/WthaiqSigningError$PageError;Ljava/lang/String;ILjava/lang/Object;)Lcom/wthaiq/signing/WthaiqSigningError$PageError;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public final fun getReason ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/WthaiqSigningError$TimedOut : com/wthaiq/signing/WthaiqSigningError {
+	public static final field INSTANCE Lcom/wthaiq/signing/WthaiqSigningError$TimedOut;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/WthaiqSigningError$UnexpectedReturnStatus : com/wthaiq/signing/WthaiqSigningError {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lcom/wthaiq/signing/WthaiqSigningError$UnexpectedReturnStatus;
+	public static synthetic fun copy$default (Lcom/wthaiq/signing/WthaiqSigningError$UnexpectedReturnStatus;Ljava/lang/String;ILjava/lang/Object;)Lcom/wthaiq/signing/WthaiqSigningError$UnexpectedReturnStatus;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public final fun getStatus ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/WthaiqSigningError$WebContentTerminated : com/wthaiq/signing/WthaiqSigningError {
+	public static final field INSTANCE Lcom/wthaiq/signing/WthaiqSigningError$WebContentTerminated;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getDescription ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/wthaiq/signing/WthaiqSigningFileProvider : androidx/core/content/FileProvider {
+	public fun <init> ()V
+}
+
+public final class com/wthaiq/signing/WthaiqSigningFragment : androidx/fragment/app/Fragment {
+	public static final field BACK_STACK_NAME Ljava/lang/String;
+	public static final field Companion Lcom/wthaiq/signing/WthaiqSigningFragment$Companion;
+	public static final field REQUEST_KEY Ljava/lang/String;
+	public static final field RESULT_KEY Ljava/lang/String;
+	public fun <init> ()V
+	public final fun cancel ()V
+	public final fun dismissFromContainer ()V
+	public final fun getConfiguration ()Lcom/wthaiq/signing/WthaiqSigningConfiguration;
+	public final fun getListener ()Lcom/wthaiq/signing/WthaiqSigningFragment$Listener;
+	public final fun getResult ()Lcom/wthaiq/signing/SigningResult;
+	public final fun getUrl ()Ljava/lang/String;
+	public static final fun newInstance (Ljava/lang/String;)Lcom/wthaiq/signing/WthaiqSigningFragment;
+	public static final fun newInstance (Ljava/lang/String;Lcom/wthaiq/signing/WthaiqSigningConfiguration;)Lcom/wthaiq/signing/WthaiqSigningFragment;
+	public static final fun newInstance (Ljava/lang/String;Lcom/wthaiq/signing/WthaiqSigningConfiguration;Ljava/lang/String;)Lcom/wthaiq/signing/WthaiqSigningFragment;
+	public fun onCreate (Landroid/os/Bundle;)V
+	public fun onCreateView (Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
+	public fun onDestroy ()V
+	public fun onDestroyView ()V
+	public fun onSaveInstanceState (Landroid/os/Bundle;)V
+	public fun onViewCreated (Landroid/view/View;Landroid/os/Bundle;)V
+	public final fun reload ()V
+	public static final fun resultFrom (Landroid/os/Bundle;)Lcom/wthaiq/signing/SigningResult;
+	public final fun setListener (Lcom/wthaiq/signing/WthaiqSigningFragment$Listener;)V
+}
+
+public final class com/wthaiq/signing/WthaiqSigningFragment$Companion {
+	public final fun newInstance (Ljava/lang/String;)Lcom/wthaiq/signing/WthaiqSigningFragment;
+	public final fun newInstance (Ljava/lang/String;Lcom/wthaiq/signing/WthaiqSigningConfiguration;)Lcom/wthaiq/signing/WthaiqSigningFragment;
+	public final fun newInstance (Ljava/lang/String;Lcom/wthaiq/signing/WthaiqSigningConfiguration;Ljava/lang/String;)Lcom/wthaiq/signing/WthaiqSigningFragment;
+	public static synthetic fun newInstance$default (Lcom/wthaiq/signing/WthaiqSigningFragment$Companion;Ljava/lang/String;Lcom/wthaiq/signing/WthaiqSigningConfiguration;Ljava/lang/String;ILjava/lang/Object;)Lcom/wthaiq/signing/WthaiqSigningFragment;
+	public final fun resultFrom (Landroid/os/Bundle;)Lcom/wthaiq/signing/SigningResult;
+}
+
+public abstract interface class com/wthaiq/signing/WthaiqSigningFragment$Listener {
+	public fun onSigningDismissRequested (Lcom/wthaiq/signing/WthaiqSigningFragment;)V
+	public fun onSigningEvent (Lcom/wthaiq/signing/WthaiqSigningFragment;Lcom/wthaiq/signing/SigningEvent;)V
+	public abstract fun onSigningResult (Lcom/wthaiq/signing/WthaiqSigningFragment;Lcom/wthaiq/signing/SigningResult;)V
+	public fun shouldOpenExternalUrl (Lcom/wthaiq/signing/WthaiqSigningFragment;Ljava/lang/String;)Z
+}
+
+public final class com/wthaiq/signing/WthaiqSigningKt {
+	public static final fun launch (Landroidx/activity/result/ActivityResultLauncher;Ljava/lang/String;)V
+	public static final fun launch (Landroidx/activity/result/ActivityResultLauncher;Ljava/lang/String;Lcom/wthaiq/signing/WthaiqSigningConfiguration;)V
+	public static synthetic fun launch$default (Landroidx/activity/result/ActivityResultLauncher;Ljava/lang/String;Lcom/wthaiq/signing/WthaiqSigningConfiguration;ILjava/lang/Object;)V
+}
+

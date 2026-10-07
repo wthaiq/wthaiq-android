@@ -16,11 +16,6 @@ android {
         minSdk = 24
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
-        buildConfigField("String", "SDK_VERSION", "\"${property("VERSION_NAME")}\"")
-    }
-
-    buildFeatures {
-        buildConfig = true
     }
 
     buildTypes {
@@ -30,13 +25,14 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 
     testOptions {
         targetSdk = 35
         unitTests.isReturnDefaultValues = true
+        unitTests.all { it.systemProperty("wthaiq.version", property("VERSION_NAME") as String) }
         animationsDisabled = true
     }
 
@@ -59,7 +55,7 @@ android {
 kotlin {
     explicitApi()
     compilerOptions {
-        jvmTarget.set(JvmTarget.JVM_17)
+        jvmTarget.set(JvmTarget.JVM_11)
         freeCompilerArgs.add("-Xjvm-default=all")
     }
 }
