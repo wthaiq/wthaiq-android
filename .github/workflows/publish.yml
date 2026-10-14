@@ -1,0 +1,60 @@
+name: publish
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    name: Publish to Maven Central
+    runs-on: ubuntu-24.04
+    environment:
+      name: maven-central
+      url: https://central.sonatype.com/namespace/com.wthaiq
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Build and sign the publications
+        env:
+          ORG_GRADLE_PROJECT_signingInMemoryKey: ${{ secrets.MAVEN_SIGNING_KEY }}
+        run: ./gradlew publishAllPublicationsToStagingRepository
+      - name: Check the bundle
+        run: |
+          cd build/staging-deploy
+          for f in $(find com -type f \( -name '*.aar' -o -name '*.pom' -o -name '*.jar' -o -name '*.module' \)); do
+            test -f "$f.asc" || { echo "missing signature: $f"; exit 1; }
+          done
+          zip -r ../central-bundle.zip com -x '*maven-metadata.xml*'
+          unzip -l ../central-bundle.zip
+      - name: Upload to the Central Portal and wait for the result
+        env:
+          CENTRAL_USERNAME: ${{ secrets.CENTRAL_USERNAME }}
+          CENTRAL_PASSWORD: ${{ secrets.CENTRAL_PASSWORD }}
+        run: |
+          set -euo pipefail
+          TOKEN=$(printf '%s:%s' "$CENTRAL_USERNAME" "$CENTRAL_PASSWORD" | base64 -w0)
+          ID=$(curl -fsS -X POST -H "Authorization: Bearer $TOKEN" \
+            -F "bundle=@build/central-bundle.zip" \
+            "https://central.sonatype.com/api/v1/publisher/upload?name=wthaiq-android-${GITHUB_REF_NAME}&publishingType=AUTOMATIC")
+          echo "deployment: $ID"
+          for i in $(seq 1 90); do
+            STATUS=$(curl -fsS -X POST -H "Authorization: Bearer $TOKEN" \
+              "https://central.sonatype.com/api/v1/publisher/status?id=$ID")
+            STATE=$(echo "$STATUS" | jq -r '.deploymentState')
+            echo "state: $STATE"
+            case "$STATE" in
+              PUBLISHING|PUBLISHED) exit 0 ;;
+              FAILED) echo "$STATUS" | jq . ; exit 1 ;;
+            esac
+            sleep 20
+          done
+          echo "timed out waiting for the Central Portal"
+          exit 1

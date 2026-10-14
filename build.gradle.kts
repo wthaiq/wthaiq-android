@@ -93,7 +93,7 @@ subprojects {
                     useInMemoryPgpKeys(
                         findProperty("signingInMemoryKeyId") as String?,
                         signingKey,
-                        findProperty("signingInMemoryKeyPassword") as String?,
+                        (findProperty("signingInMemoryKeyPassword") as String?) ?: "",
                     )
                     sign(extensions.getByType(PublishingExtension::class.java).publications)
                 }
